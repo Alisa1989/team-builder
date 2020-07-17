@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 
-
 const Form = props => {
     const [newEmployee, setNewEmployee] = useState({name:"", email:"", role:""})
 
@@ -15,8 +14,8 @@ const Form = props => {
     return (
         <form onSubmit={(event) => {
             event.preventDefault();
+            props.addEmployee(newEmployee)
             setNewEmployee({name:"", email:"", role:""})
-            console.log(props.addEmployee)
         }}>
 
             <label>What is your name?
